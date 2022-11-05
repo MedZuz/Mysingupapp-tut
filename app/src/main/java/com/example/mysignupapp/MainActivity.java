@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
+///hide barr mysignup
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         eLogin = findViewById(R.id.btnconnect1);
 
-        String username ="aziz";
-        String password = "1234";
 
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+
                 if (password.matches("")) {
                     txterroruser.setText("Ce champ est requis!");
                     ok = Boolean.FALSE;
@@ -74,14 +73,19 @@ public class MainActivity extends AppCompatActivity {
                 if(ok){
 
                     Intent act2 = new Intent(MainActivity.this ,Activity2.class);
+
                     act2.putExtra("username" ,name) ;
+                    act2.putExtra("password" ,password) ;
+
+
                     startActivity(act2);
+                    finish();
                 }
 
 
 
             }
-
+//check states of activits
 
 
         });
