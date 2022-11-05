@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F14B4B"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+
+
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-6dp"
+                    android:contentDescription="TODO"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.52"
+                    app:srcCompat="@drawable/top_background" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintVertical_bias="0.45"
+                    app:srcCompat="@drawable/logo_esb1"
+
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Bienvenu sur Esprit "
+                    android:textAlignment="center"
+                    android:textColor="#9A1F31"
+                    android:textSize="23dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textVdiew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="90dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Connectez-vous à votre compte"
+                    android:textAlignment="center"
+                    android:textColor="#9A1F31"
+                    android:textSize="13dp"
+
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/txterroruser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/txtuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                     android:layout_marginBottom="19dp"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="Nom d'utilisateur"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="10dp"
+
+
+
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/txtpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="Enter your password "
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:drawableLeft="@drawable/ic_baseline_password_24"
+                    android:drawablePadding="10dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txterrorpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textveiwmpsoublier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Mot de passe oublié ? "
+                    android:textColor="#9A1F31"
+                    android:layout_marginBottom="15dp"
+
+
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnconnect1"
+                    android:layout_width="350dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btns_style"
+                    android:text="connexion"
+
+                    android:textColor="#F4F4EF"
+                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
