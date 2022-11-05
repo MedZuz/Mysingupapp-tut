@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 TextView txterroruser = findViewById(R.id.txterroruser);
                 TextView txterrorpwd = findViewById(R.id.txterrorpwd);
 
+                TextView txtmsgjava  = findViewById(R.id.txtmsg);
+
                 Boolean ok=Boolean.TRUE;
                 if (name.matches("")) {
                     txterroruser.setText("Ce champ est requis !");
@@ -65,8 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
 
-                    txterroruser.setText("");
+                    txterroruser.setVisibility(View.INVISIBLE);
                 }
+
+
+
 
             }
 

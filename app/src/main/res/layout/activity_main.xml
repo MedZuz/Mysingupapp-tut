@@ -68,19 +68,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Bienvenu sur Esprit "
-                    android:textAlignment="center"
-                    android:textColor="#9A1F31"
-                    android:textSize="23dp"
-
-                    />
-
-                <TextView
                     android:id="@+id/textVdiew"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,6 +150,19 @@
 
                     android:textColor="#F4F4EF"
                      />
+
+                <TextView
+                    android:id="@+id/txtmsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Bienvenu sur Esprit "
+                    android:textAlignment="center"
+                    android:textColor="#9A1F31"
+                    android:textSize="23dp"
+
+                    />
 
             </LinearLayout>
 
