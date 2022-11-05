@@ -2,6 +2,7 @@ package com.example.mysignupapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -70,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
                     txterroruser.setVisibility(View.INVISIBLE);
                 }
 
+                if(ok){
+
+                    Intent act2 = new Intent(MainActivity.this ,Activity2.class);
+                    act2.putExtra("username" ,name) ;
+                    startActivity(act2);
+                }
 
 
 
