@@ -22,17 +22,25 @@ public class MaBaseSQLite extends SQLiteOpenHelper  {
     private static final String update_db = "DROP TABLE " + TABLE_USER + ";";
 
 
-    public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version)
+    {
+
         super(context, name, factory, version);
+
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db){
+    public void onCreate(SQLiteDatabase db)
+    {
+
         db.execSQL(CREATE_TABLE_USER);
+
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db , int oldVersion , int newVersion ){
+    public void onUpgrade(SQLiteDatabase db , int oldVersion , int newVersion )
+    {
+
         db.execSQL(update_db);
 
         onCreate(db);
