@@ -6,9 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class MaBaseSQLite extends SQLiteOpenHelper  {
 
-    private static final String TABLE_USER ="table_user";
+
+
+/// the mother file that we will use to create Db and tables
+
+
+
+public class MaBaseSQLite extends SQLiteOpenHelper  {   //  SQLiteOpenHelperto do the ddl and dml things in the DB
+
+    private static final String TABLE_USER ="table_user";   /// the mother table here
     private static final String COL_ID ="CIN";
     private static final String COL_First_Name ="Firstname";
     private static final String COL_Last_Name ="Lastname";
@@ -21,6 +28,7 @@ public class MaBaseSQLite extends SQLiteOpenHelper  {
 
     private static final String update_db = "DROP TABLE " + TABLE_USER + ";";
 
+     ////creation of the data base
 
     public MaBaseSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version)
     {
@@ -40,12 +48,12 @@ public class MaBaseSQLite extends SQLiteOpenHelper  {
     @Override
     public void onUpgrade(SQLiteDatabase db , int oldVersion , int newVersion )
     {
-
+        //remove the data base
         db.execSQL(update_db);
 
+        //then recreate it by :
         onCreate(db);
 
     }
 
 }
-

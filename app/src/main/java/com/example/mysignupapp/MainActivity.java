@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button eLogin;
     private EditText eName;
     private EditText ePassword;
+    private TextView txterroruser;
+
 
 
     @Override
@@ -33,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         eLogin = findViewById(R.id.btnconnect1);
 
 
+
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 EditText txtuserjava = findViewById(R.id.txtuser);
                 EditText txtpwdjava = findViewById(R.id.txtpwd);
@@ -46,9 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 TextView txterroruser = findViewById(R.id.txterroruser);
                 TextView txterrorpwd = findViewById(R.id.txterrorpwd);
 
-                TextView txtmsgjava  = findViewById(R.id.txtmsg);
+
+
+
+                TextView txtmsgjava  = findViewById(R.id.msg);
 
                 Boolean ok=Boolean.TRUE;
+
                 if (name.matches("")) {
                     txterroruser.setText("Ce champ est requis !");
                         ok=Boolean.FALSE;
@@ -60,14 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
                 if (password.matches("")) {
-                    txterroruser.setText("Ce champ est requis!");
+                    txterrorpwd.setText("zab!");
                     ok = Boolean.FALSE;
 
                 } else {
 
+
                     txterroruser.setVisibility(View.INVISIBLE);
+
+
                 }
 
                 if(ok){
@@ -83,9 +93,58 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+/////////////////  down there creation mta user should be relied to da mainactiv 2
+
+
+                User u1 = new User();     ///  u1 object with X and shit info
+                u1.setCin("123");
+                u1.setFirstname("bronnie");
+                u1.setLastname("gotham");
+                u1.setPwd("98302752");
+
+
+                UserDB udb = new UserDB(getApplicationContext());           // ??
+
+                udb.open();
+
+                udb.insertUser(u1);
+
+                User res =  udb.getUserWithusername(u1.getFirstname());
+
+
+
+
+                udb.close();
+
+
+
+
+                if (res!=null){
+                    Toast.makeText(MainActivity.this, "user in the data base with this name ", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             }
-//check states of activits
+
+
+
+
+
+
+
 
 
         });
