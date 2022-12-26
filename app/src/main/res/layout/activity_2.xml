@@ -83,6 +83,11 @@
 
                     />
 
+                <TextView
+                    android:id="@+id/Noommerr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <EditText
                     android:id="@+id/Noomm"
                     android:layout_width="match_parent"
@@ -111,7 +116,7 @@
                     android:drawablePadding="10dp"
                     android:ems="10"
                     android:hint="Adresse d'utilisateur"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:minHeight="48dp"
 
                     android:paddingLeft="10dp" />
@@ -142,12 +147,12 @@
                     android:drawablePadding="10dp"
                     android:ems="10"
                     android:hint="Num Téléphone "
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:paddingLeft="10dp"
 
                     />
-
+<!--
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btninscri2"
                     android:layout_width="match_parent"
@@ -158,7 +163,18 @@
                     android:layout_marginBottom="20dp"
                     android:background="#FFFFFF"
                     android:text="inscrivez-vous"
-                    android:textColor="#811D33" />
+                    android:textColor="#811D33" />-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btninscri2"
+                    android:layout_width="350dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btns_style"
+                    android:text="connexion"
+
+                    android:textColor="#F4F4EF"
+                    />
 
             </LinearLayout>
 

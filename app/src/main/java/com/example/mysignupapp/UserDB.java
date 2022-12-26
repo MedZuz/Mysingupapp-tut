@@ -76,7 +76,6 @@ import android.database.sqlite.SQLiteDatabase;
             values.put(COL_Last_Name, user.getLastname());
             values.put(COL_username, user.getUsername());
             values.put(COL_Password, user.getPwd());
-            //on insère l'objet dans la BDD via le ContentValues
             return bdd.insert(TABLE_USER, null, values);
 
         }

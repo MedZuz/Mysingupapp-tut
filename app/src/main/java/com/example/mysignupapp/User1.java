@@ -11,7 +11,7 @@ public class User1 {
 
 
     private String Nom ;
-    private String Addresse  ;
+    private String addresse  ;
     private String numT  ;
     private String mps  ;
 
@@ -29,11 +29,11 @@ public class User1 {
     }
 
     public String getAddresse() {
-        return Addresse;
+        return addresse;
     }
 
     public void setAddresse(String addresse) {
-        Addresse = addresse;
+            addresse = addresse;
     }
 
     public String getNumT() {
@@ -58,7 +58,7 @@ public class User1 {
 
     public User1(String nom, String addresse, String numT, String mps) {
         this.Nom = nom;
-        this.Addresse = addresse;
+        this.addresse = addresse;
         this.numT = numT;
         this.mps = mps;
     }
@@ -71,7 +71,7 @@ public class User1 {
         private static final String TABLE_USER ="table_user";
         private static final String COL_ID ="numT";
         private static final String COL_Nom ="Nom";
-        private static final String COL_Add ="Addresse";
+        private static final String COL_Add ="addresse";
         private static final String COL_Mtps ="mps";
 
         public MaBaseSQLitee(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -82,8 +82,7 @@ public class User1 {
         public void onCreate(SQLiteDatabase db) {
 
             db.execSQL("CREATE TABLE " + TABLE_USER + " ( "+ COL_ID + "TEXT PRIMARY KEY , " + COL_Nom
-                    +"TEXT ," + COL_Add + "TEXT,"
-                    +COL_Mtps + "TEXT NOT NULL );");
+                    +"TEXT ," + COL_Add + "TEXT,"  +COL_Mtps + "TEXT NOT NULL );");
         }
 
         @Override

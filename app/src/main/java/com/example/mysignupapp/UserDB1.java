@@ -8,9 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class UserDB1 {
 
     private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "user.db";
-
-
+    private static final String NOM_BDD = "newuserdb.db";
 
 
     private static final String TABLE_USER ="table_user";
@@ -18,7 +16,7 @@ public class UserDB1 {
     private static final int NUM_COL_ID = 0;
     private static final String COL_Nom ="Nom";
     private static final int NUM_COL_Nom = 1;
-    private static final String COL_Add ="Addresse";
+    private static final String COL_Add ="addresse";
     private static final int NUM_COL_COL_Add = 2;
     private static final String COL_Mtps ="mps";
     private static final int NUM_COL_Password = 3;
@@ -34,6 +32,9 @@ public class UserDB1 {
         maBaseSQLite  = new User1.MaBaseSQLitee(context,NOM_BDD,null,VERSION_BDD);
 
     }
+
+
+
 
 
     public void open()
@@ -64,15 +65,16 @@ public class UserDB1 {
     public long insertUser(User1 user)
 
     {
+
+
         //Création d'un ContentValues
-        ContentValues values = new ContentValues();
-        //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne dans laquelle on veut mettre la valeur)
-        values.put(COL_Nom, user.getNom());
-        values.put(COL_ID, user.getNumT());
-        values.put(COL_Add, user.getAddresse());
-        values.put(COL_Mtps, user.getMps());
-        //on insère l'objet dans la BDD via le ContentValues
-        return bdd.insert(TABLE_USER, null, values);
+        ContentValues vs1 = new ContentValues();
+        vs1.put(COL_ID,user.getNumT());
+        vs1.put(COL_Nom,user.getNom());
+        vs1.put(COL_Add,user.getAddresse());
+        vs1.put(COL_Mtps,user.getMps());
+
+        return bdd.insert(TABLE_USER, null, vs1);
 
     }
 
@@ -81,6 +83,33 @@ public class UserDB1 {
     {
         Cursor c = bdd.rawQuery("select * from " + TABLE_USER , new String[] {});
         return c.getCount();
+    }
+
+
+
+
+    public Boolean checkuser(String eName)
+    {
+        Cursor m = bdd.rawQuery("select * from table_user where Nom = ? "  ,new String[]{eName});
+
+        if (m.getCount() > 0)
+            return true;
+        else
+            return  false;
+
+
+    }
+
+    public Boolean checkuserpass(String eName, String ePassword)
+    {
+        Cursor m = bdd.rawQuery("select * from table_user where mps = ? and  Nom= ? "  ,new String[]{eName,ePassword});
+
+        if (m.getCount() > 0)
+            return true;
+        else
+            return  false;
+
+
     }
 
 

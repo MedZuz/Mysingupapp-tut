@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button eLogin;
+    private Button btninscri;
+
     private EditText eName;
     private EditText ePassword;
     private TextView txterroruser;
@@ -32,9 +34,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        eName = findViewById(R.id.txtuser);
+
+        ePassword =  findViewById(R.id.txtpwd);
+
         eLogin = findViewById(R.id.btnconnect1);
 
+        btninscri=findViewById(R.id.btninscri);
 
+        btninscri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent act20 = new Intent(MainActivity.this ,Activity2.class);
+                startActivity(act20);
+
+
+
+
+            }
+        });
 
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView txtmsgjava  = findViewById(R.id.msg);
 
+                String errormessage = "tous les champs sans requies !";
+
                 Boolean ok=Boolean.TRUE;
 
                 if (name.matches("")) {
-                    txterroruser.setText("Ce champ est requis !");
+                    txterroruser.setText(errormessage);
                         ok=Boolean.FALSE;
 
                 } else {
@@ -69,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (password.matches("")) {
-                    txterrorpwd.setText("zab!");
+                    txterrorpwd.setText(errormessage);
                     ok = Boolean.FALSE;
 
                 } else {
@@ -82,47 +103,16 @@ public class MainActivity extends AppCompatActivity {
 
                 if(ok){
 
-                    Intent act2 = new Intent(MainActivity.this ,Activity2.class);
-
-                    act2.putExtra("username" ,name) ;
-                    act2.putExtra("password" ,password) ;
 
 
-                    startActivity(act2);
-                    finish();
-                }
+
+                        }
 
 
 /////////////////  down there creation mta user should be relied to da mainactiv 2
 
 
-                User u1 = new User();     ///  u1 object with X and shit info
-                u1.setCin("123");
-                u1.setFirstname("bronnie");
-                u1.setLastname("gotham");
-                u1.setPwd("98302752");
 
-
-                UserDB udb = new UserDB(getApplicationContext());           // ??
-
-                udb.open();
-
-                udb.insertUser(u1);
-
-                User res =  udb.getUserWithusername(u1.getFirstname());
-
-
-
-
-                udb.close();
-
-
-
-
-                if (res!=null){
-                    Toast.makeText(MainActivity.this, "user in the data base with this name ", Toast.LENGTH_SHORT).show();
-
-                }
 
 
 
@@ -142,12 +132,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
         });
+
 
 
 
