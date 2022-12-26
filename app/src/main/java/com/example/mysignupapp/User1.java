@@ -9,11 +9,10 @@ import androidx.annotation.Nullable;
 public class User1 {
 
 
-
-    private String Nom ;
-    private String addresse  ;
-    private String numT  ;
-    private String mps  ;
+    private String numT;
+    private String Nom;
+    private String addresse;
+    private String mps;
 
 
 
@@ -33,7 +32,7 @@ public class User1 {
     }
 
     public void setAddresse(String addresse) {
-            addresse = addresse;
+        addresse = addresse;
     }
 
     public String getNumT() {
@@ -56,9 +55,9 @@ public class User1 {
     public User1() {
     }
 
-    public User1(String nom, String addresse, String numT, String mps) {
-        this.Nom = nom;
+    public User1( String addresse,String nom, String numT, String mps) {
         this.addresse = addresse;
+        this.Nom = nom;
         this.numT = numT;
         this.mps = mps;
     }
@@ -81,12 +80,13 @@ public class User1 {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL("CREATE TABLE " + TABLE_USER + " ( "+ COL_ID + "TEXT PRIMARY KEY , " + COL_Nom
-                    +"TEXT ," + COL_Add + "TEXT,"  +COL_Mtps + "TEXT NOT NULL );");
+            db.execSQL("CREATE TABLE " + TABLE_USER + " ( "+ COL_ID + " TEXT PRIMARY KEY , " + COL_Nom
+                    +" TEXT ," + COL_Add + " TEXT,"  +COL_Mtps + " TEXT NOT NULL );");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+
 
             db.execSQL("DROP TABLE " + TABLE_USER + ";");
             onCreate(db);
@@ -96,4 +96,4 @@ public class User1 {
     }
 
 
-    }
+}

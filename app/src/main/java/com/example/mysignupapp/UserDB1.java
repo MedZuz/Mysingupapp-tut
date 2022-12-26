@@ -8,18 +8,25 @@ import android.database.sqlite.SQLiteDatabase;
 public class UserDB1 {
 
     private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "newuserdb.db";
+    private static final String NOM_BDD = "moumva.db";
 
 
     private static final String TABLE_USER ="table_user";
+
+
     private static final String COL_ID ="numT";
     private static final int NUM_COL_ID = 0;
+
     private static final String COL_Nom ="Nom";
     private static final int NUM_COL_Nom = 1;
+
     private static final String COL_Add ="addresse";
-    private static final int NUM_COL_COL_Add = 2;
+    private static final String NUM_COL_Add ="2";
+
     private static final String COL_Mtps ="mps";
-    private static final int NUM_COL_Password = 3;
+    private static final String NUM_COL_Mtps ="3";
+
+
 
 
 
@@ -66,18 +73,17 @@ public class UserDB1 {
 
     {
 
-
         //Création d'un ContentValues
         ContentValues vs1 = new ContentValues();
+        vs1.put(COL_Add,user.getAddresse());
         vs1.put(COL_ID,user.getNumT());
         vs1.put(COL_Nom,user.getNom());
-        vs1.put(COL_Add,user.getAddresse());
         vs1.put(COL_Mtps,user.getMps());
+
 
         return bdd.insert(TABLE_USER, null, vs1);
 
     }
-
 
     public int getnbrUser(String FindName)
     {
@@ -119,8 +125,8 @@ public class UserDB1 {
         // Cursor c = bdd.query(TABLE_USER, new String[] {COL_ID, COL_First_Name, COL_Last_Name, COL_username, COL_Password}, COL_username + " LIKE \"" + username +"\"", null, null, null, null);
         // return cursorToUser(c);
 
-   // prof work  //  Cursor z = bdd.rawQuery("select * from " +TABLE_USER+" where Nom="+Nom,new String[]{ });
-      //  return cursorToUser(z);
+        // prof work  //  Cursor z = bdd.rawQuery("select * from " +TABLE_USER+" where Nom="+Nom,new String[]{ });
+        //  return cursorToUser(z);
 
 
 
@@ -140,29 +146,29 @@ public class UserDB1 {
     }
 
 
-  //--!  private User1 cursorToUser(Cursor c)
-  // ** {
-        //si aucun élément n'a été retourné dans la requête, on renvoie null
-     /**   if (c.getCount() == 0)
-            return null;
+    //--!  private User1 cursorToUser(Cursor c)
+    // ** {
+    //si aucun élément n'a été retourné dans la requête, on renvoie null
+    /**   if (c.getCount() == 0)
+     return null;
 
-        //Sinon on se place sur le premier élément
-        c.moveToFirst();
-        //On créé un etudiant
-        User1 user = new User1();
-        //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
-        //user.set(c.getInt(NUM_COL_ID));
+     //Sinon on se place sur le premier élément
+     c.moveToFirst();
+     //On créé un etudiant
+     User1 user = new User1();
+     //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
+     //user.set(c.getInt(NUM_COL_ID));
 
-        user.setNom(c.getString(COL_Nom));
-        user.setAddresse(c.getString(COL_Add));
-        user.setNumT(c.getString(COL_ID));
-        user.setMps(c.getString(COL_Mtps));
-        //On ferme le cursor
-        c.close();
+     user.setNom(c.getString(COL_Nom));
+     user.setAddresse(c.getString(COL_Add));
+     user.setNumT(c.getString(COL_ID));
+     user.setMps(c.getString(COL_Mtps));
+     //On ferme le cursor
+     c.close();
 
-        //On retourne le user
-        return user;
-    }**/
+     //On retourne le user
+     return user;
+     }**/
 
 
 

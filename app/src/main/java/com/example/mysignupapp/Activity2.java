@@ -41,9 +41,11 @@ public class Activity2 extends AppCompatActivity {
 
                                      EditText numt = findViewById(R.id.numTT);
                                      EditText Nom = findViewById(R.id.Noomm);
-                                     TextView Nomerr = findViewById(R.id.Noommerr);
                                      EditText ads = findViewById(R.id.add);
                                      EditText pss = findViewById(R.id.txtpwd4);
+
+
+                                     TextView Nomerr = findViewById(R.id.Noommerr);
 
 
                                      Boolean ok = Boolean.TRUE;
@@ -108,9 +110,11 @@ public class Activity2 extends AppCompatActivity {
 
 
                                          db.open();
+
                                          User1 u1 = new User1(numt.getText().toString(),Nom.getText().toString(),ads.getText().toString(), pss.getText().toString());     ///  u1 will be created with the essential infos once insc has been clicked
 
                                          db.insertUser(u1);
+
                                          db.close();
 
 
